@@ -1,0 +1,7 @@
+<suite name="gohighlevelTestingSuite">
+	<test name="gohighlevelTest">
+		<classes>
+			<class name="com.gohighlevel.web.selenium.tests.Calendar.OptimizeAppointment" />
+		</classes>
+	</test>
+</suite>

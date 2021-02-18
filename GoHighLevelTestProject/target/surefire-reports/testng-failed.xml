@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [gohighlevelTestingSuite]">
+  <test thread-count="5" verbose="0" name="gohighlevelTest(failed)">
+    <classes>
+      <class name="com.gohighlevel.web.selenium.tests.Calendar.OptimizeAppointment">
+        <methods>
+          <include name="tearDown"/>
+          <include name="beforeClass"/>
+          <include name="verifyTeamMembersInCalendar"/>
+        </methods>
+      </class> <!-- com.gohighlevel.web.selenium.tests.Calendar.OptimizeAppointment -->
+    </classes>
+  </test> <!-- gohighlevelTest(failed) -->
+</suite> <!-- Failed suite [gohighlevelTestingSuite] -->

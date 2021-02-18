@@ -1,0 +1,4 @@
+com\gohighlevel\web\selenium\pages\BasePage.class
+com\gohighlevel\web\selenium\pages\GenericPage.class
+com\gohighlevel\web\selenium\loader\PageLoader.class
+com\gohighlevel\web\selenium\pages\OptimizeAppointmentPage.class
