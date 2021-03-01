@@ -2,6 +2,7 @@ package com.gohighlevel.web.selenium.pages;
 
 import java.io.File;
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -192,5 +193,15 @@ public class BasePage implements DataLoader {
 			e.printStackTrace();
 		}
 	}
+	
+	 /**
+     * Switch to Next Tab
+     * 
+     */
+    public String switchToNextTab_BasePage() {
+    	ArrayList<String> tabs2 = new ArrayList<String> (this.driver.getWindowHandles());
+	    this.driver.switchTo().window(tabs2.get(1));
+	    return this.driver.getCurrentUrl();
+    }
 
 }

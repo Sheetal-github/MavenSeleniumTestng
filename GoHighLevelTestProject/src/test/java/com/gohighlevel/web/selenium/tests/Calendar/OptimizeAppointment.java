@@ -18,30 +18,17 @@ public class OptimizeAppointment implements PageLoader {
 		genericPage.goToHomePage_BasePage();
 		optAptPage.clickOnCalendarsTab();
 	}
-
+	
 	@Test
-	public void verifyEditCalendarPageOpensUp() {
+	public void verifyUserBooksAppointment() {
 
-		optAptPage.clickAndSelectEditFromCalendarDropdown();
-		Assert.assertTrue(optAptPage.calendar_edit_title.getText().contains("Edit Calendar"),
-				"Edit calendar title is not correct");
-	}
-
-	@Test
-	public void verifyTeamMembersInCalendar() {
-		List<WebElement> teamMemberList = optAptPage.team_members;
-
-		List<String> expectedTeamMemberList = new ArrayList<String>();
-		expectedTeamMemberList.add("Sheetal Kapoor");
-		expectedTeamMemberList.add("Tester 1");
-		expectedTeamMemberList.add("Tester 2");
-
-		List<String> actualteamMemberNames = new ArrayList<String>();
-		for (WebElement teamMember : teamMemberList) {
-			actualteamMemberNames.add(teamMember.getText().trim());
-			System.out.println(teamMember.getText());
-		}
-		Assert.assertEquals(actualteamMemberNames, expectedTeamMemberList);
+		optAptPage.clickOnCalendarsLink();
+		Assert.assertTrue(optAptPage.calendar_widget_name.getText().equalsIgnoreCase("testing_Calendar"));
+		optAptPage.selectDateandTime();
+		optAptPage.enterUserInformation();
+		Assert.assertTrue(optAptPage.calendar_confirmation_message.getText().contains("Your Meeting has been Scheduled"));
+		
+		
 	}
 
 	@AfterClass
@@ -49,4 +36,31 @@ public class OptimizeAppointment implements PageLoader {
 		basePage.getDriver().quit();
 	}
 
+
+//	@Test
+//	public void verifyEditCalendarPageOpensUp() {
+//
+//		optAptPage.clickAndSelectEditFromCalendarDropdown();
+//		Assert.assertTrue(optAptPage.calendar_edit_title.getText().contains("Edit Calendar"),
+//				"Edit calendar title is not correct");
+//	}
+//
+//	@Test
+//	public void verifyTeamMembersInCalendar() {
+//		List<WebElement> teamMemberList = optAptPage.team_members;
+//
+//		List<String> expectedTeamMemberList = new ArrayList<String>();
+//		expectedTeamMemberList.add("Sheetal Kapoor");
+//		expectedTeamMemberList.add("Tester 1");
+//		expectedTeamMemberList.add("Tester 2");
+//
+//		List<String> actualteamMemberNames = new ArrayList<String>();
+//		for (WebElement teamMember : teamMemberList) {
+//			actualteamMemberNames.add(teamMember.getText().trim());
+//			System.out.println(teamMember.getText());
+//		}
+//		Assert.assertEquals(actualteamMemberNames, expectedTeamMemberList);
+//	}
+	
+	
 }
